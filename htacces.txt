@@ -1,0 +1,23 @@
+Options -Indexes
+
+RewriteEngine On
+
+# Imposta la cartella del progetto
+RewriteBase /template-php/
+
+# Se NON stai chiedendo qualcosa in public, indirizza in public
+RewriteCond %{REQUEST_URI} !^/template-php/public/
+#RewriteCond %{REQUEST_URI} !^/template-php/assets/
+RewriteRule ^(.*)$ public/$1 [L,QSA]
+
+# Protezione file che iniziano con punto
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+RedirectMatch 404 /\.git
+
+# Se non esiste file o cartella → reindirizza a public.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /template-php/public/index.html [R=302,L]

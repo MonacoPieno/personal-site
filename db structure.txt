@@ -1,0 +1,11 @@
+pages:
+-home
+-projects
+-skills
+-experiences
+
+tables:
+(project and experience are really similar concept i will unify them)
+post(idp, title, text 
+link(name, description, url, idp[fk])
+image(idm, filepath, filename, alt_text, idp[fk])	 
