@@ -19,7 +19,7 @@ nav {
 nav a {
     box-sizing: border-box;
     text-align: center;
-    width: 100px;
+    width: 140px;
     padding: 10px;
     background-color: blue;
     border-radius: 20px;
@@ -54,6 +54,9 @@ article {
 }
 
 article .post {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
     margin-left: auto;
     margin-right: auto;
     border: 1px solid blue;
@@ -72,4 +75,9 @@ footer {
     right: 0px;
     width: 100%;
     overflow: hidden;
+}
+
+span{
+    display: flex;
+    flex-direction: row;
 }
